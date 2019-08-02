@@ -10,5 +10,10 @@
 		"lastName": "Rosello",
 		"contributionDescription": "Minor Bugfixes",
 		"urlString": "https://github.com/roselloryan"
-	}]
+    }, {
+        "firstName": "Pierre-Yves",
+        "lastName": "Lapersonne",
+        "contributionDescription": "i18n",
+        "urlString": "https://pylapersonne.info"
+    }]
 }

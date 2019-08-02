@@ -1,0 +1,30 @@
+================================================================================
+MIT License
+================================================================================
+Component: Alamofire Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+License Text URL: licenses/LICENSE-Alamofire.txt
+Source Code: https://github.com/Alamofire/Alamofire
+
+Component: APTimeZones Copyright (c) 2013 Alterplay 
+License Text URL: licenses/LICENSE-APTimeZones.txt
+Source Code: https://github.com/Alterplay/APTimeZones
+
+Component: FMDB Copyright (c) 2008-2014 Flying Meat Inc.
+License Text URL: licenses/LICENSE-FMDB.txt
+Source Code: https://github.com/ccgus/fmdb
+
+Component: PKHUD Copyright (c) 2014 Philip Kluz (Philip.Kluz@gmail.com)
+License Text URL: licenses/LICENSE-PKHUD.txt
+Source Code: https://github.com/pkluz/PKHUD
+
+Component: Copyright (c) 2014-2019 Mathijs Kadijk
+License Text URL: licenses/LICENSE-Rswift.txt
+Source Code: https://github.com/mac-cain13/R.swift
+
+Component: Copyright (c) 2016 Onix-Systems
+License Text URL: licenses/LICENSE-RainyRefreshControl.txt
+Source Code: https://github.com/Onix-Systems/RainyRefreshControl
+
+Component: Copyright (c) 2016 Fabricio Serralvo
+License Text URL: licenses/LICENSE-TextFieldCounter.txt
+Source Code: https://github.com/serralvo/TextFieldCounter
