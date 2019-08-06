@@ -421,6 +421,7 @@
 				F204B7741DF2EFA3000F4371 /* Frameworks */,
 				F204B7751DF2EFA3000F4371 /* Resources */,
 				6D7C7244C920F897332ED643 /* [CP] Embed Pods Frameworks */,
+				51BFBAC822F9E88800428B81 /* Build AUTHORS */,
 			);
 			buildRules = (
 			);
@@ -609,6 +610,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NearbyWeatherTests/Pods-NearbyWeatherTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		51BFBAC822F9E88800428B81 /* Build AUTHORS */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build AUTHORS";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python ../tools/generate-authors.py --source NearbyWeather/DevelopmentContributors.json > ../AUTHORS.md\n";
 		};
 		6D7C7244C920F897332ED643 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
