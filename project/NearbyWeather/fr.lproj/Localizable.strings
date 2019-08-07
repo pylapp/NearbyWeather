@@ -77,6 +77,7 @@ icons = "Iconographie";
 bookmarked = "Favoris";
 nearby = "À proximité";
 apiKey = "Clé d'API";
+apiKeyCreationUrl = "Créer une nouvelle clé d'API";
 sortByName = "Par nom";
 sortByTemperature = "Par température";
 sortByDistance = "Par distance";
