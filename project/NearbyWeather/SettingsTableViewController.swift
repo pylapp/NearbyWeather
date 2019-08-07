@@ -41,11 +41,15 @@ class SettingsTableViewController: UITableViewController {
         case 1:
             break
         case 2:
-            let storyboard = UIStoryboard(name: "Settings", bundle: nil)
-            let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SettingsInputTVC") as! SettingsInputTableViewController
-            
-            navigationItem.removeTextFromBackBarButton()
-            navigationController?.pushViewController(destinationViewController, animated: true)
+            if indexPath.row == 0 {
+                let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+                let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SettingsInputTVC") as! SettingsInputTableViewController
+                navigationItem.removeTextFromBackBarButton()
+                navigationController?.pushViewController(destinationViewController, animated: true)
+            } else {
+                presentSafariViewController(for: URL(string: "https://openweathermap.org/api")!)
+            }
+            break;
         case 3:
             guard indexPath.row == 0 else {
                 let storyboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -108,7 +112,7 @@ class SettingsTableViewController: UITableViewController {
         case 1:
             return 1
         case 2:
-            return 1
+            return 2
         case 3:
             return 2
         case 4:
@@ -134,9 +138,15 @@ class SettingsTableViewController: UITableViewController {
             }
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! LabelCell
-            cell.contentLabel.text = R.string.localizable.apiKey()
-            cell.selectionLabel.text = UserDefaults.standard.value(forKey: kNearbyWeatherApiKeyKey) as? String
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! LabelCell
+                cell.contentLabel.text = R.string.localizable.apiKey()
+                cell.selectionLabel.text = UserDefaults.standard.value(forKey: kNearbyWeatherApiKeyKey) as? String
+                cell.accessoryType = .disclosureIndicator
+                return cell
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "URLCell", for: indexPath) as! URLCell
+            cell.urlLabel.text = R.string.localizable.apiKeyCreationUrl()
             cell.accessoryType = .disclosureIndicator
             return cell
         case 3:
