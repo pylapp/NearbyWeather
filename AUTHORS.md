@@ -1,21 +1,22 @@
-# Authors
+# Authors 
 
-## Project Owner
+## Project Owner 
 
-* Erik Maximilian Martens - https://www.linkedin.com/in/erik-maximilian-martens-212280a1/"
+* Erik Maximilian Martens - https://www.linkedin.com/in/erik-maximilian-martens-212280a1/ 
 
-## Minor Bugfixes
+## Minor Bugfixes 
 
-* Ryan Rosello - https://github.com/roselloryan
+* Ryan Rosello - https://github.com/roselloryan 
 
-## Swift 5.0 Conversions, Remove Warnings
+## Swift 5.0 Conversions, Remove Warnings 
 
-* M. Bohling - https://github.com/mbohling
+* M. Bohling - https://github.com/mbohling 
 
-## Gitignored CocoaPods Files in Repository
+## Gitignored CocoaPods Files in Repository 
 
-* Nischal Hada - https://github.com/hadanischal
+* Nischal Hada - https://github.com/hadanischal 
 
-## French Localization, Various Cleanups
+## French Localization, Various Cleanups 
 
-* Pierre-Yves Lapersonne - https://pylapersonne.info
+* Pierre-Yves Lapersonne - https://pylapersonne.info 
+
