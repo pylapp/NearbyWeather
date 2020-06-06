@@ -10,6 +10,7 @@
 <img src="https://img.shields.io/github/license/erikmartens/NearbyWeather.svg?style=flat" alt="License: MIT">
 <a href="https://github.com/erikmartens/NearbyWeather/graphs/contributors"><img src="https://img.shields.io/github/contributors/erikmartens/NearbyWeather.svg?style=flat" alt="Contributors"></a>
 <a href="https://twitter.com/erik_martens"><img src="https://img.shields.io/badge/Twitter-@erik_martens-blue.svg" alt="Twitter: @erik_martens"/></a>
+<a href="https://discord.gg/fxPgKzC"><img src="https://img.shields.io/discord/717413902689894411.svg?style=shield" alt="Discord: NearbyWeather by Erik Martens"/></a>
 </p>
 <p align="center">
 <a href="https://itunes.apple.com/app/nearbyweather/id1227313069"><img src="Resources/app_store_badge.svg" alt="Download on the App Store"/></a>
@@ -70,9 +71,10 @@ We looking forward to receiving your contributions. You can find more informatio
 Additionally you may also assist as a beta tester. Periodically test-builds will become available via Testflight. In order to take part in testing those submit an email address used as an Apple-ID to [erikmartens.developer@gmail.com](mailto:erikmartens.developer@gmail.com) to be added to the list of testers.
 
 ## Future Developments
-- Integrate RxSwift
-- Re-Build Routing using RxFlow
+- Integrate RxSwift for reactive scenes
+- Refactor scene-architecture using the MVVM+C pattern and define UI programmatically via autolayout
+- SwiftUI previews for ViewControllers using mock models
 - Integrate Realm for data persistence
-- Refactor scene-architecture using MVVM+C pattern with RxSwift
-- Write XCTests
+- Include Unit Tests for Services
+- Include UITests for Scenes
 - Setup CI and CD with Bitrise
