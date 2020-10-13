@@ -332,55 +332,55 @@ extension ListViewController {
 ///
 extension ListViewController: UIViewControllerPreviewingDelegate {
         
-    /// Definess the rectable for rendering and builds the suitable `UIViewController` for the selected item.
-    /// - Parameters:
-    ///     - previewingContext: The context for drawings
-    ///     - location: The location where the user taps
-    /// - Returns: The view controller to preview
-    ///
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        if let index = tableView.indexPathForRow(at: location) {
-            previewingContext.sourceRect = tableView.rectForRow(at: index)
-            return buildDetailsViewController(for: index)
+  /// Defines the rectangle for rendering and builds the suitable `UIViewController` for the selected item.
+  /// - Parameters:
+  ///     - previewingContext: The context for drawings
+  ///     - location: The location where the user taps
+  /// - Returns: The view controller to preview
+  ///
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+    if let index = tableView.indexPathForRow(at: location) {
+      previewingContext.sourceRect = tableView.rectForRow(at: index)
+      return buildDetailsViewController(for: index)
         }
-        return nil
-    }
+    return nil
+  }
     
-    /// Triggered when the user goes further in the peek and pop process.
-    /// Here uses RxFlow to load the step for the selected item/
-    /// Uses the `lastSelectedCell` property os as to get the cell's details for the view controller to ue.
-    /// - Parameters:
-    ///     - previewingContext: Context for rendering
-    ///     - viewControllerToCommit: Not used
-    ///
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        steps.accept(
-          ListStep.weatherDetails(
-            // lastSelectedCell here will be always defined because defined in buildDetailsViewController(for:)
-            // which is always  ans only called before previewingContext(_:commit:)
-            identifier: lastSelectedCell!.weatherDataIdentifier,
-            isBookmark: lastSelectedCell!.isBookmark
-          )
-        )
-    }
+  /// Triggered when the user goes further in the peek and pop process.
+  /// Here uses RxFlow to load the step for the selected item/
+  /// Uses the `lastSelectedCell` property os as to get the cell's details for the view controller to ue.
+  /// - Parameters:
+  ///     - previewingContext: Context for rendering
+  ///     - viewControllerToCommit: Not used
+  ///
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+    steps.accept(
+      ListStep.weatherDetails(
+      // lastSelectedCell here will be always defined because defined in buildDetailsViewController(for:)
+      // which is always and only called before previewingContext(_:commit:)
+      identifier: lastSelectedCell!.weatherDataIdentifier,
+      isBookmark: lastSelectedCell!.isBookmark
+      )
+    )
+  }
     
-    // MARK: - Specific
+  // MARK: - Specific
     
-    /// Using the index path of the embeded `tableView`, builds a `UIViewController` for weather details.
-    /// This method ha sbeen defined for peek and pop specific needs and doe snot rely on RxFlow.
-    /// Defines the `lastSelectedCell` for the pop operation.
-    /// - Parameter index: The index of the table view to sue to get the weather details values
-    /// - Returns: An intance of `WeatherDetailViewController`
-    ///
-    private func buildDetailsViewController(for index: IndexPath) -> UIViewController? {
-      guard let selectedCell = tableView.cellForRow(at: index) as? WeatherDataCell else {
-        return nil
-      }
-      lastSelectedCell = selectedCell // Will be never nil here
-      guard let weatherDTO = WeatherDataService.shared.weatherDTO(forIdentifier: lastSelectedCell!.weatherDataIdentifier) else {
-        return nil
-      }
-      return WeatherDetailViewController.instantiateFromStoryBoard(weatherDTO: weatherDTO, isBookmark: lastSelectedCell!.isBookmark)
+  /// Using the index path of the embeded `tableView`, builds a `UIViewController` for weather details.
+  /// This method ha sbeen defined for peek and pop specific needs and doe snot rely on RxFlow.
+  /// Defines the `lastSelectedCell` for the pop operation.
+  /// - Parameter index: The index of the table view to sue to get the weather details values
+  /// - Returns: An intance of `WeatherDetailViewController`
+  ///
+  private func buildDetailsViewController(for index: IndexPath) -> UIViewController? {
+    guard let selectedCell = tableView.cellForRow(at: index) as? WeatherDataCell else {
+      return nil
     }
+    lastSelectedCell = selectedCell // Will be never nil here
+    guard let weatherDTO = WeatherDataService.shared.weatherDTO(forIdentifier: lastSelectedCell!.weatherDataIdentifier) else {
+      return nil
+    }
+    return WeatherDetailViewController.instantiateFromStoryBoard(weatherDTO: weatherDTO, isBookmark: lastSelectedCell!.isBookmark)
+  }
     
 }
